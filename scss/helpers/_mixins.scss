@@ -1,0 +1,23 @@
+@mixin round($x) {
+	border-radius: $x;
+	-webkit-border-radius: $x;
+	-moz-border-radius: $x;
+	-ms-border-radius: $x;
+	-o-border-radius: $x;
+}
+
+@mixin transition($seconds, $timing-function, $property) {
+	transition: $seconds $timing-function $property;
+	-webkit-transition: $seconds $timing-function $property;
+	-moz-transition: $seconds $timing-function $property;
+	-ms-transition: $seconds $timing-function $property;
+	-o-transition: $seconds $timing-function $property;
+}
+
+@mixin move($x, $y: 0) {
+	transform: translate($x, $y);
+	-webkit-transform: translate($x, $y);
+	-moz-transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	-o-transform: translate($x, $y);
+}

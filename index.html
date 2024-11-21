@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta
+			name="description"
+			content="This is an app to manage your work, add some notes, make to dos, etc.."
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/icons/all.min.css" />
+		<link rel="icon" href="assets/imgs/notes(1).png" />
+		<script src="assets/icons/all.min.js" defer></script>
+		<title>To Do App</title>
+	</head>
+	<body>
+		<div id="hover-messege"></div>
+		<audio
+			src="assets/sounds/livechat-129007.mp3"
+			style="display: none; pointer-events: none"
+		></audio>
+		<div class="overlay" id="overlay"></div>
+		<nav class="closed" id="nav">
+			<div id="close"><i class="fa-solid fa-xmark nav-close"></i></div>
+			<div class="profile-info">
+				<img
+					src="assets/imgs/spider.jpg"
+					alt=""
+					class="profileImg"
+					loading="lazy"
+					width="50"
+					height="50"
+				/>
+				<div id="profileName">
+					<h3>Ali Adel</h3>
+					<p>alya70934@gmail.com</p>
+				</div>
+			</div>
+			<ul id="mainLists">
+				<div class="search-wrapper">
+					<input type="text" id="search" placeholder="Search" />
+					<div class="search-icon">
+						<i class="bx bx-search"></i>
+					</div>
+				</div>
+				<li class="active" id="DLink">
+					<div class="icon"><i class="bx bx-sun"></i></div>
+					<span class="text">My Day</span>
+				</li>
+				<li class="" id="ILink">
+					<div class="icon">
+						<i class="bx bx-star"></i>
+					</div>
+					<span class="text">Important</span>
+				</li>
+				<li class="" id="CLink">
+					<div class="icon">
+						<i
+							class="fa-regular fa-circle-check"
+							style="height: 17px; color: var(--clr-500)"
+						></i>
+					</div>
+					<span class="text">Completed</span>
+				</li>
+			</ul>
+			<ul id="secondry-lists"></ul>
+			<footer>
+				<div id="add-list-btn">
+					<div class="icon">
+						<i class="bx bx-plus" style="font-size: 22px"></i>
+					</div>
+					<div class="text">New List</div>
+				</div>
+				<div id="settings">
+					<i class="bx bx-cog"></i>
+				</div>
+			</footer>
+		</nav>
+		<main id="main">
+			<div id="burger"><i class="fa-solid fa-bars burger"></i></div>
+			<header id="header">
+				<div class="date">
+					<h2 id="pageTitle">My Day</h2>
+					<p id="date"></p>
+				</div>
+				<div class="wrapper">
+					<div id="progress">
+						<div
+							class="circle"
+							id="circle"
+							style="font-family: monospace; font-size: 17px"
+						>
+							0/0
+						</div>
+					</div>
+					<div id="themes-menu">
+						<i
+							style="pointer-events: none"
+							class="bx bx-dots-horizontal-rounded"
+						></i>
+					</div>
+				</div>
+				<div class="themes" id="themes">
+					<h2>Theme</h2>
+					<div class="grid-themes">
+						<div
+							style="--color: #788cde; --var: 10px"
+							id="blue-violet"
+						></div>
+						<div
+							style="--color: #bc7abc; --var: 10px"
+							id="pink-violet"
+						></div>
+						<div
+							style="--color: #e46c8c; --var: 10px"
+							id="pink"
+						></div>
+						<div
+							style="--color: #e46b67; --var: 10px"
+							id="reddish"
+						></div>
+						<div
+							style="--color: #4aa079; --var: 10px"
+							id="green"
+						></div>
+						<div
+							style="--color: #479e98; --var: 10px"
+							id="hippi-blue"
+						></div>
+						<div
+							style="--color: #8795a0; --var: 10px"
+							id="gray"
+						></div>
+						<div style="--color: #a0cbf1; --var: 10px"></div>
+						<div style="--color: #d6bde7; --var: 10px"></div>
+						<div style="--color: #f5b6c2; --var: 10px"></div>
+						<div style="--color: #ecbda2; --var: 10px"></div>
+						<div style="--color: #9ad2ba; --var: 10px"></div>
+						<div style="--color: #8bd3ce; --var: 10px"></div>
+						<div style="--color: #bac8d4; --var: 10px"></div>
+						<img
+							src="assets/imgs/cities.jpg"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/grass.jpg"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/flowers.jpg"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/leafs.jpg"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/universe.jpg"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/beach.jpg"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/coaleafs.png"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/flowers(2).jpg"
+							alt=""
+							loading="lazy"
+						/>
+						<img
+							src="assets/imgs/forest.jpg"
+							alt=""
+							loading="lazy"
+							id="mount"
+						/>
+					</div>
+					<div id="deleteAllBtn">
+						<span>Delete All</span>
+						<i class="fa-regular fa-trash-can"></i>
+					</div>
+				</div>
+			</header>
+			<div class="taskList">
+				<ul id="listOfTasks"></ul>
+				<div class="blur">
+					<div class="popMessege" id="initialMessege">
+						<img
+							id="initialMessege__img"
+							src="/assets/imgs/notes(1).png"
+							alt=""
+						/>
+						<h3 id="initialMessege__title"></h3>
+						<p id="initialMessege__text"></p>
+					</div>
+				</div>
+			</div>
+			<footer class="task-input" id="inputField">
+				<div id="addbtn">
+					<i class="bx bx-plus" style="font-size: 22px"></i>
+				</div>
+				<input
+					type="text"
+					id="taskInput"
+					autocomplete="off"
+					placeholder="Add a Task"
+				/>
+			</footer>
+		</main>
+		<div class="overlay2" id="overlay2">
+			<div class="container" id="popup">
+				<h2>Delete Task</h2>
+				<p class="popup-text">"Task" will be permanently deleted</p>
+				<div class="btns">
+					<div class="delete-btn" id="delete" tabindex="0">
+						Delete
+					</div>
+					<div class="cancel-btn" id="cancel" tabindex="0">
+						Cancel
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="ahmed"></div>
+		<script type="module" defer src="js/main.js"></script>
+		<script type="module" defer src="js/modules/date.js"></script>
+		<script type="module" defer src="js/modules/domElements.js"></script>
+		<script type="module" defer src="js/modules/events.js"></script>
+		<script type="module" defer src="js/modules/render.js"></script>
+		<script type="module" defer src="js/modules/themes.js"></script>
+		<script type="module" defer src="js/modules/lightDark.js"></script>
+	</body>
+</html>
